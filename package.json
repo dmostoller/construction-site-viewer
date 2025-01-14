@@ -3,25 +3,37 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "prepare-cesium": "tsx scripts/copy-cesium-assets.ts",
+    "dev": "npm run prepare-cesium && next dev --turbopack",
+    "build": "npm run prepare-cesium && next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@cesium/engine": "^13.1.0",
+    "cesium": "^1.125.0",
+    "next": "15.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.1.4"
+    "resium": "^1.18.3"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@svgr/webpack": "^8.1.0",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
-    "@eslint/eslintrc": "^3"
+    "fs-extra": "^11.2.0",
+    "postcss": "^8",
+    "prettier": "^3.4.2",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
   }
 }
